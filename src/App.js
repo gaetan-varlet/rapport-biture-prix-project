@@ -6,7 +6,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {volumeEnLitre:0, pourcentageAlcool:0, prixEnEuros:0}
+    this.state = {volumeEnLitre:0, pourcentageAlcool:0, prixEnEuros:0, prixEnEurosSoft:0}
 }
 
   render() {
@@ -19,6 +19,7 @@ class App extends Component {
             <TextField type="number" label="Quantité en litres" onChange= {(e) => this.majVolume(e)}/><br/>
             <TextField type="number" label="Pourcentage d'alcool" onChange= {(e) => this.majAlcool(e)}/><br/>
             <TextField type="number" label="Prix en euros" onChange= {(e) => this.majPrix(e)}/><br/>
+            <TextField type="number" label="Prix en euros du soft" onChange= {(e) => this.majPrixSoft(e)}/><br/>
 
           </fieldset>
         </form>
@@ -26,7 +27,8 @@ class App extends Component {
         <p className="result">Rapport biture/prix :
           <strong>
             {this.calculRapportBiturePrix(
-              this.state.volumeEnLitre, this.state.pourcentageAlcool, this.state.prixEnEuros
+              this.state.volumeEnLitre, this.state.pourcentageAlcool,
+              this.state.prixEnEuros, this.state.prixEnEurosSoft
             )}
          </strong>
         </p>
@@ -47,8 +49,12 @@ class App extends Component {
     this.setState({prixEnEuros:this.transformationVirguleEnPoint(event.target.value)})
   }
 
-  calculRapportBiturePrix(volumeEnLitre, pourcentageAlcool, prixEnEuros){
-    return Math.round((volumeEnLitre * pourcentageAlcool / prixEnEuros) * 100) / 100
+  majPrixSoft(event){
+    this.setState({prixEnEurosSoft:this.transformationVirguleEnPoint(event.target.value)})
+  }
+
+  calculRapportBiturePrix(volumeEnLitre, pourcentageAlcool, prixEnEuros, prixEnEurosSoft){
+    return Math.round((volumeEnLitre * pourcentageAlcool / ( prixEnEuros + prixEnEurosSoft )) * 100) / 100
   }
 
   transformationVirguleEnPoint(value){
