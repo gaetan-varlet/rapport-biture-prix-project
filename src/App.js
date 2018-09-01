@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
 
 class App extends Component {
 
@@ -14,25 +16,22 @@ class App extends Component {
           <fieldset>
             <legend>Calcul du rapport biture/prix</legend>
             
-            <label>Quantité en litres : </label>
-            <input type="text" onChange= {(e) => this.majVolume(e)}/>
-            <br/>
-
-            <label>Pourcentage d'alcool : </label>
-            <input type="text" onChange={this.majAlcool.bind(this)}/>
-            <br/>
-
-            <label>Prix en euros : </label>
-            <input type="text" onChange={this.majPrix.bind(this)}/>
-            <br/>
-
-            <p>Rapport biture/prix : {this.calculRapportBiturePrix(
-             this.state.volumeEnLitre, this.state.pourcentageAlcool, this.state.prixEnEuros
-            )}
-            </p>
+            <TextField type="text" label="Quantité en litres" onChange= {(e) => this.majVolume(e)}/><br/>
+            <TextField type="text" label="Pourcentage d'alcool" onChange= {(e) => this.majAlcool(e)}/><br/>
+            <TextField type="text" label="Prix en euros" onChange= {(e) => this.majPrix(e)}/><br/>
 
           </fieldset>
         </form>
+
+        <p className="result">Rapport biture/prix :
+          <strong>
+            {this.calculRapportBiturePrix(
+              this.state.volumeEnLitre, this.state.pourcentageAlcool, this.state.prixEnEuros
+            )}
+         </strong>
+        </p>
+
+
       </div>
     );
   }
