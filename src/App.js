@@ -16,9 +16,9 @@ class App extends Component {
           <fieldset>
             <legend>Calcul du rapport biture/prix</legend>
             
-            <TextField type="text" label="Quantité en litres" onChange= {(e) => this.majVolume(e)}/><br/>
-            <TextField type="text" label="Pourcentage d'alcool" onChange= {(e) => this.majAlcool(e)}/><br/>
-            <TextField type="text" label="Prix en euros" onChange= {(e) => this.majPrix(e)}/><br/>
+            <TextField type="number" label="Quantité en litres" onChange= {(e) => this.majVolume(e)}/><br/>
+            <TextField type="number" label="Pourcentage d'alcool" onChange= {(e) => this.majAlcool(e)}/><br/>
+            <TextField type="number" label="Prix en euros" onChange= {(e) => this.majPrix(e)}/><br/>
 
           </fieldset>
         </form>
