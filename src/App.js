@@ -31,25 +31,28 @@ class App extends Component {
          </strong>
         </p>
 
-
       </div>
     );
   }
 
   majVolume(event){
-    this.setState({volumeEnLitre:event.target.value})
+    this.setState({volumeEnLitre:this.transformationVirguleEnPoint(event.target.value)})
   }
 
   majAlcool(event){
-    this.setState({pourcentageAlcool:event.target.value})
+    this.setState({pourcentageAlcool:this.transformationVirguleEnPoint(event.target.value)})
   }
 
   majPrix(event){
-    this.setState({prixEnEuros:event.target.value})
+    this.setState({prixEnEuros:this.transformationVirguleEnPoint(event.target.value)})
   }
 
   calculRapportBiturePrix(volumeEnLitre, pourcentageAlcool, prixEnEuros){
     return Math.round((volumeEnLitre * pourcentageAlcool / prixEnEuros) * 100) / 100
+  }
+
+  transformationVirguleEnPoint(value){
+    return parseFloat(value.replace(",", "."))
   }
 }
 
