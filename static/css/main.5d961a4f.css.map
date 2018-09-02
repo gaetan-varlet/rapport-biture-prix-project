@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAC,KACC,sBAAwB,CAG1B,QAEE,iBAAmB,CAGrB,KAEE,kBAAoB","file":"static/css/main.5d961a4f.css","sourcesContent":[" body {\n  font-family: sans-serif;\n}\n\n.result\n{\n  text-align: center;\n}\n\nform\n{\n  margin-bottom: 30px;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}

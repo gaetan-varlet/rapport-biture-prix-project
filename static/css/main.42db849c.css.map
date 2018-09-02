@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAC,KACC,sBAAwB,CAG1B,QAEE,iBAAmB","file":"static/css/main.42db849c.css","sourcesContent":[" body {\n  font-family: sans-serif;\n}\n\n.result\n{\n  text-align: center;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}
