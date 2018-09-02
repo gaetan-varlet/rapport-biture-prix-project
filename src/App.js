@@ -13,7 +13,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {volumeEnLitre:2, pourcentageAlcool:0, prixEnEuros:0, prixEnEurosSoft:0, result:0,
+    this.state = {volumeEnLitre:0, pourcentageAlcool:0, prixEnEuros:0, prixEnEurosSoft:0, result:0,
       nom:"", listeProduit:[]}
 }
 
